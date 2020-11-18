@@ -186,24 +186,17 @@ class BISOFT_TERN {
         ];
     }
 
-    // B1-B2 F1-F2  OPTION_9
+    // B-F OPTION_9
     get ULTRASONIC_PORTS() {
         return [
             {
-                text: "B1",
-                value: "B1",
+                text: "B",
+                value: "B",
             },
+
             {
-                text: "B2",
-                value: "B2",
-            },
-            {
-                text: "F1",
-                value: "F1",
-            },
-            {
-                text: "F2",
-                value: "F2",
+                text: "F",
+                value: "F",
             },
         ];
     }
@@ -538,7 +531,7 @@ class BISOFT_TERN {
                         ports: {
                             type: "string",
                             menu: "ultraSonic_ports",
-                            defaultValue: "B1",
+                            defaultValue: "B",
                         },
                     },
                 },
