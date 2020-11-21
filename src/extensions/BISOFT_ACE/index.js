@@ -3,21 +3,16 @@ const BlockType = require("../../extension-support/block-type");
 const Cast = require("../../util/cast");
 const log = require("../../util/log");
 
-class BISOFT_TERN {
+class BISOFT_ACE {
     constructor(runtime) {
         this.runtime = runtime;
     }
 
-    // A-I  I-M   OPTION_1
     get ALL_PORTS_MENU() {
         return [
             {
                 text: "A1",
                 value: "A1",
-            },
-            {
-                text: "A2",
-                value: "A2",
             },
             {
                 text: "B1",
@@ -28,14 +23,6 @@ class BISOFT_TERN {
                 value: "B2",
             },
             {
-                text: "C1",
-                value: "C1",
-            },
-            {
-                text: "C2",
-                value: "C2",
-            },
-            {
                 text: "D1",
                 value: "D1",
             },
@@ -44,21 +31,53 @@ class BISOFT_TERN {
                 value: "D2",
             },
             {
-                text: "E1",
-                value: "E1",
-            },
-            {
-                text: "E2",
-                value: "E2",
-            },
-            {
                 text: "F1",
                 value: "F1",
             },
+        ];
+    }
+
+    get LOGIC() {
+        return [
             {
-                text: "F2",
-                value: "F2",
+                text: "HIGH",
+                value: "HIGH",
             },
+            {
+                text: "LOW",
+                value: "LOW",
+            },
+        ];
+    }
+
+    get BRIGHTNESS_PORTS() {
+        return [
+            {
+                text: "A1",
+                value: "A1",
+            },
+            {
+                text: "D1",
+                value: "D1",
+            },
+        ];
+    }
+
+    get MOTOR_ACTIONS() {
+        return [
+            {
+                text: "Forward",
+                value: "Forward",
+            },
+            {
+                text: "Backward",
+                value: "Backward",
+            },
+        ];
+    }
+
+    get SERVO_PORTS() {
+        return [
             {
                 text: "G1",
                 value: "G1",
@@ -67,34 +86,9 @@ class BISOFT_TERN {
                 text: "G2",
                 value: "G2",
             },
-            {
-                text: "H1",
-                value: "H1",
-            },
-            {
-                text: "H2",
-                value: "H2",
-            },
-            {
-                text: "I1",
-                value: "I1",
-            },
-            {
-                text: "I2",
-                value: "I2",
-            },
-            {
-                text: "M1",
-                value: "M1",
-            },
-            {
-                text: "M2",
-                value: "M2",
-            },
         ];
     }
 
-    //A-I    OPTION_7
     get CHECK_LOGIC_PORTS_MENU() {
         return [
             {
@@ -129,107 +123,9 @@ class BISOFT_TERN {
                 text: "D2",
                 value: "D2",
             },
-            {
-                text: "E1",
-                value: "E1",
-            },
-            {
-                text: "E2",
-                value: "E2",
-            },
-            {
-                text: "F1",
-                value: "F1",
-            },
-            {
-                text: "F2",
-                value: "F2",
-            },
-            {
-                text: "G1",
-                value: "G1",
-            },
-            {
-                text: "G2",
-                value: "G2",
-            },
-            {
-                text: "H1",
-                value: "H1",
-            },
-            {
-                text: "H2",
-                value: "H2",
-            },
-            {
-                text: "I1",
-                value: "I1",
-            },
-            {
-                text: "I2",
-                value: "I2",
-            },
         ];
     }
 
-    // B1 F1  OPTION_2
-    get SERVO_PORTS() {
-        return [
-            {
-                text: "B1",
-                value: "B1",
-            },
-            {
-                text: "F1",
-                value: "F1",
-            },
-        ];
-    }
-
-    // B-F OPTION_9
-    get ULTRASONIC_PORTS() {
-        return [
-            {
-                text: "B",
-                value: "B",
-            },
-
-            {
-                text: "F",
-                value: "F",
-            },
-        ];
-    }
-
-    // HIGH - LOW  OPTION_1 and OPTION_7
-    get LOGIC() {
-        return [
-            {
-                text: "HIGH",
-                value: "HIGH",
-            },
-            {
-                text: "LOW",
-                value: "LOW",
-            },
-        ];
-    }
-
-    // FORWARD-BACKWORD OPTION_3 OPTION_4 and OPTION_5
-    get MOTOR_ACTIONS() {
-        return [
-            {
-                text: "Forward",
-                value: "Forward",
-            },
-            {
-                text: "Backward",
-                value: "Backward",
-            },
-        ];
-    }
-
-    // A-F  OPTION_8
     get ANALOG_PORTS() {
         return [
             {
@@ -271,42 +167,16 @@ class BISOFT_TERN {
         ];
     }
 
-    //B1-F1  OPTION_2 and OPTION_6
-    get BRIGHTNESS_PORTS() {
+    get ULTRASONIC_PORTS() {
         return [
             {
-                text: "B1",
-                value: "B1",
+                text: "B",
+                value: "B",
             },
-            {
-                text: "F1",
-                value: "F1",
-            },
-        ];
-    }
 
-    get SERVO_PORTS() {
-        return [
             {
-                text: "B1",
-                value: "B1",
-            },
-            {
-                text: "F1",
-                value: "F1",
-            },
-        ];
-    }
-
-    get MOTOR_PORTS() {
-        return [
-            {
-                text: "M1",
-                value: "M1",
-            },
-            {
-                text: "M2",
-                value: "M2",
+                text: "D",
+                value: "D",
             },
         ];
     }
@@ -340,65 +210,61 @@ class BISOFT_TERN {
         ];
     }
 
-    setPortsLogic(args, utils) {
-        console.log("setPortsLogic");
+    get LED_COLOR() {
+        return [
+            {
+                text: "red",
+                value: "red",
+            },
+            {
+                text: "green",
+                value: "green",
+            },
+            {
+                text: "blue",
+                value: "blue",
+            },
+        ];
     }
 
-    setBrighness(args, utils) {
-        console.log("setBrighness");
+    get PLAY_TONE() {
+        return [
+            {
+                text: "Sa",
+                value: "Sa",
+            },
+            {
+                text: "Re",
+                value: "Re",
+            },
+            {
+                text: "Ga",
+                value: "Ga",
+            },
+            {
+                text: "Pa",
+                value: "Pa",
+            },
+            {
+                text: "Dha",
+                value: "Dha",
+            },
+            {
+                text: "Ni",
+                value: "Ni",
+            },
+        ];
     }
 
-    moveMotor(args, utils) {
-        console.log("moveMotor");
-    }
-
-    moveLeftMotor(args, utils) {
-        console.log("moveLeftMotor");
-    }
-
-    moveRightMotor(args, utils) {
-        console.log("moveRightMotor");
-    }
-
-    setServoMotor(args, utils) {
-        console.log("setServoMotor");
-    }
-
-    setAnalogRead(args, utils) {
-        console.log("setAnalogRead");
-    }
-
-    checkLogicCondition(args, utils) {
-        console.log("checkLogicCondition");
-    }
-
-    ultrasonicSensor() {
-        console.log("ultrasonicSensor");
-    }
-    colorSensor() {
-        console.log("color sensor");
-    }
     getInfo() {
         return {
-            id: "tern",
-            name: "TERN",
+            id: "ace",
+            name: "ACE",
             blocks: [
                 {
-                    opcode: "writeLog",
-                    blockType: BlockType.COMMAND,
-                    text: "log [TEXT]",
-                    arguments: {
-                        TEXT: {
-                            type: ArgumentType.STRING,
-                            defaultValue: "hello",
-                        },
-                    },
-                },
-
-                {
                     opcode: "setPortsLogic",
-                    text: "Set [ports]at  Logic [logic]",
-                    blockType: "co  mmand",
+                    blockType: "command",
+                    text: "Set [ports]at Logic  [logic]",
                     arguments: {
                         ports: {
                             type: "string",
@@ -420,7 +286,7 @@ class BISOFT_TERN {
                         ports: {
                             type: "string",
                             menu: "brightnessPorts",
-                            defaultValue: "B1",
+                            defaultValue: "A1",
                         },
                         brightness: {
                             type: "number",
@@ -478,6 +344,7 @@ class BISOFT_TERN {
                         },
                     },
                 },
+
                 {
                     opcode: "setServoMotor",
                     text: "set servo motor at [ports] to [degree] degrees",
@@ -486,7 +353,7 @@ class BISOFT_TERN {
                         ports: {
                             type: "string",
                             menu: "servo_ports",
-                            defaultValue: "B1",
+                            defaultValue: "G1",
                         },
                         degree: {
                             type: "number",
@@ -511,6 +378,7 @@ class BISOFT_TERN {
                         },
                     },
                 },
+
                 {
                     opcode: "setAnalogRead",
                     text: "Analog read of port [ports]",
@@ -523,6 +391,7 @@ class BISOFT_TERN {
                         },
                     },
                 },
+
                 {
                     opcode: "ultrasonicSensor",
                     text: "ultrasonic sensor at port [ports]",
@@ -535,6 +404,7 @@ class BISOFT_TERN {
                         },
                     },
                 },
+
                 {
                     opcode: "colorSensor",
                     text: "[color] of 4-in 1 sensor is",
@@ -547,44 +417,69 @@ class BISOFT_TERN {
                         },
                     },
                 },
+
+                {
+                    opcode: "setLEDColor",
+                    blockType: "command",
+                    text: " Set [LEDPort] LED at brightness [brightness]%",
+                    arguments: {
+                        LEDPort: {
+                            type: "string",
+                            menu: "LEDColor",
+                            defaultValue: "red",
+                        },
+                        brightness: {
+                            type: "number",
+                            defaultValue: 100,
+                            maxValue: 100,
+                            minValue: 0,
+                        },
+                    },
+                },
+
+                {
+                    opcode: "setPlayTone",
+                    blockType: "command",
+                    text: "Play Tone [tone]",
+                    arguments: {
+                        tone: {
+                            type: "string",
+                            defaultValue: "Sa",
+                            menu: "playTone",
+                        },
+                    },
+                },
             ],
+
             menus: {
                 allPorts: {
                     acceptReporters: false,
                     items: this.ALL_PORTS_MENU,
                 },
-                checkLogicConditionPorts: {
+                logic: {
                     acceptReporters: false,
-                    items: this.CHECK_LOGIC_PORTS_MENU,
+                    items: this.LOGIC,
                 },
                 brightnessPorts: {
                     acceptReporters: false,
                     items: this.BRIGHTNESS_PORTS,
                 },
-                motorPorts: {
-                    acceptReporters: false,
-                    items: this.MOTOR_PORTS,
-                },
-                analogPorts: {
-                    acceptReporters: false,
-                    items: this.ANALOG_PORTS,
-                },
-                servoPorts: {
-                    acceptReporters: false,
-                    items: this.SERVO_PORTS,
-                },
-                logic: {
-                    acceptReporters: false,
-                    items: this.LOGIC,
-                },
+
                 motor_actions: {
                     acceptReporters: false,
                     items: this.MOTOR_ACTIONS,
                 },
+
                 servo_ports: {
                     acceptReporters: false,
                     items: this.SERVO_PORTS,
                 },
+
+                checkLogicConditionPorts: {
+                    acceptReporters: false,
+                    items: this.CHECK_LOGIC_PORTS_MENU,
+                },
+
                 analog_ports: {
                     acceptReporters: false,
                     items: this.ANALOG_PORTS,
@@ -597,15 +492,18 @@ class BISOFT_TERN {
                     acceptReporters: false,
                     items: this.COLOR,
                 },
+
+                LEDColor: {
+                    acceptReporters: false,
+                    items: this.LED_COLOR,
+                },
+                playTone: {
+                    acceptReporters: false,
+                    items: this.PLAY_TONE,
+                },
             },
         };
     }
-
-    // opcode  function
-    writeLog(args) {
-        const text = Cast.toString(args.TEXT);
-        log.log(text);
-    }
 }
 
-module.exports = BISOFT_TERN;
+module.exports = BISOFT_ACE;
