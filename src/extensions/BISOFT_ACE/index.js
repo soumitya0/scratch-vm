@@ -141,6 +141,10 @@ class BISOFT_ACE {
                 value: "B1",
             },
             {
+                text: "B2",
+                value: "B2",
+            },
+            {
                 text: "C1",
                 value: "C1",
             },
@@ -153,16 +157,8 @@ class BISOFT_ACE {
                 value: "D1",
             },
             {
-                text: "E1",
-                value: "E1",
-            },
-            {
-                text: "E2",
-                value: "E2",
-            },
-            {
-                text: "F1",
-                value: "F1",
+                text: "D2",
+                value: "D2",
             },
         ];
     }

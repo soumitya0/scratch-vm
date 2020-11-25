@@ -398,7 +398,7 @@ class BISOFT_TERN {
                 {
                     opcode: "setPortsLogic",
                     text: "Set [ports]at  Logic [logic]",
-                    blockType: "co  mmand",
+                    blockType: "command",
                     arguments: {
                         ports: {
                             type: "string",
