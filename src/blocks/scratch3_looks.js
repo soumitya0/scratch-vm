@@ -339,7 +339,7 @@ class Scratch3LooksBlocks {
             looks_sayforsecs: this.sayforsecs,
 
             // 🎯	Accept 1,2 block remove all block from lOOK
-            // 🕑 25-11-2020
+            // 🕑   25-11-2020
             // looks_think: this.think,
             // looks_thinkforsecs: this.thinkforsecs,
             // looks_show: this.show,
