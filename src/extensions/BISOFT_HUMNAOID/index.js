@@ -161,6 +161,24 @@ class BISOFT_HUMANOID {
             },
 
             {
+                text: "B1",
+                value: "B1",
+            },
+            {
+                text: "B2",
+                value: "B2",
+            },
+
+            {
+                text: "C1",
+                value: "C1",
+            },
+            {
+                text: "C2",
+                value: "C2",
+            },
+
+            {
                 text: "D1",
                 value: "D1",
             },
@@ -384,8 +402,6 @@ class BISOFT_HUMANOID {
                         },
                     },
                 },
-
-                // add new block
 
                 {
                     opcode: "setServoMotor",

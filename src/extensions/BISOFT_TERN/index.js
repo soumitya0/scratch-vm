@@ -83,14 +83,6 @@ class BISOFT_TERN {
                 text: "I2",
                 value: "I2",
             },
-            {
-                text: "M1",
-                value: "M1",
-            },
-            {
-                text: "M2",
-                value: "M2",
-            },
         ];
     }
 
@@ -383,17 +375,18 @@ class BISOFT_TERN {
             id: "tern",
             name: "TERN",
             blocks: [
-                {
-                    opcode: "writeLog",
-                    blockType: BlockType.COMMAND,
-                    text: "log [TEXT]",
-                    arguments: {
-                        TEXT: {
-                            type: ArgumentType.STRING,
-                            defaultValue: "hello",
-                        },
-                    },
-                },
+                // simple Block
+                // {
+                //     opcode: "writeLog",
+                //     blockType: BlockType.COMMAND,
+                //     text: "log [TEXT]",
+                //     arguments: {
+                //         TEXT: {
+                //             type: ArgumentType.STRING,
+                //             defaultValue: "hello",
+                //         },
+                //     },
+                // },
 
                 {
                     opcode: "setPortsLogic",
