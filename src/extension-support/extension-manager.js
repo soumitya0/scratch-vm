@@ -15,7 +15,7 @@ const builtinExtensions = {
     // // These are the non-core built-in extensions.
     // pen: () => require("../extensions/scratch3_pen"),
     // wedo2: () => require("../extensions/scratch3_wedo2"),
-    music: () => require("../extensions/scratch3_music"),
+    //music: () => require("../extensions/scratch3_music"),
     // microbit: () => require("../extensions/scratch3_microbit"),
     // text2speech: () => require("../extensions/scratch3_text2speech"),
     // translate: () => require("../extensions/scratch3_translate"),
@@ -29,7 +29,7 @@ const builtinExtensions = {
 
     // 【★　added All the block】
 
-    newblocks: () => require("../extensions/scratch3_newblocks"), //【★　Added newblock 】
+    // newblocks: () => require("../extensions/scratch3_newblocks"), //【★　Added newblock 】
 
     tern: () => require("../extensions/BISOFT_TERN/index"), //【★　Added TERN BLOCK 】
 

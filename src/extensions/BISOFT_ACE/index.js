@@ -3,6 +3,7 @@ const BlockType = require("../../extension-support/block-type");
 const Cast = require("../../util/cast");
 const log = require("../../util/log");
 
+const ACEImg = require("./ACE.png");
 class BISOFT_ACE {
     constructor(runtime) {
         this.runtime = runtime;
@@ -260,6 +261,8 @@ class BISOFT_ACE {
         return {
             id: "ace",
             name: "ACE",
+            menuIconURI: ACEImg,
+            blockIconURI: ACEImg,
             blocks: [
                 {
                     opcode: "setPortsLogic",

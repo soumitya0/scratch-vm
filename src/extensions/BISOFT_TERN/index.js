@@ -3,6 +3,15 @@ const BlockType = require("../../extension-support/block-type");
 const Cast = require("../../util/cast");
 const log = require("../../util/log");
 
+// eslint-disable-next-line max-len
+
+/**
+ * Url of icon to be displayed in the toolbox menu for the extension category.
+ * @type {string}
+ */
+// eslint-disable-next-line max-len
+const ternImg = require("./tern.png");
+
 class BISOFT_TERN {
     constructor(runtime) {
         this.runtime = runtime;
@@ -374,6 +383,8 @@ class BISOFT_TERN {
         return {
             id: "tern",
             name: "TERN",
+            menuIconURI: ternImg,
+            blockIconURI: ternImg,
             blocks: [
                 // simple Block
                 // {

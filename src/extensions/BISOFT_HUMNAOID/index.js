@@ -2,7 +2,7 @@ const ArgumentType = require("../../extension-support/argument-type");
 const BlockType = require("../../extension-support/block-type");
 const Cast = require("../../util/cast");
 const log = require("../../util/log");
-
+const HUMANOIDImg = require("./humanoidDeviceExtension.png");
 class BISOFT_HUMANOID {
     constructor(runtime) {
         this.runtime = runtime;
@@ -350,6 +350,8 @@ class BISOFT_HUMANOID {
         return {
             id: "humanoid",
             name: "HUMANOID",
+            menuIconURI: HUMANOIDImg,
+            blockIconURI: HUMANOIDImg,
             blocks: [
                 {
                     opcode: "setPortsLogic",
